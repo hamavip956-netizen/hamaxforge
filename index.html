@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAMAxFORGE</title>
+    <style>
+        body {
+            background-color: #050b08;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
+            padding: 20px;
+        }
+        .logo-container h1 {
+            font-size: 30px;
+            margin: 0;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        .logo-container h1 span {
+            color: #00ff66;
+            text-shadow: 0 0 10px rgba(0, 255, 102, 0.5);
+        }
+        .sub-text {
+            font-size: 11px;
+            color: #00cc55;
+            letter-spacing: 2px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+        }
+        .hex-box {
+            background-color: #0a140f;
+            border: 1px solid #00ff6655;
+            border-radius: 12px;
+            padding: 12px 20px;
+            font-family: monospace;
+            font-size: 13px;
+            color: #00ff66;
+            text-align: left;
+            direction: ltr;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 20px rgba(0, 255, 102, 0.15);
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+            max-width: 320px;
+            box-sizing: border-box;
+        }
+        .hex-box:active {
+            transform: scale(0.98);
+            border-color: #00ff66;
+        }
+        .hex-box div {
+            margin: 4px 0;
+        }
+        .hex-muted {
+            color: #4b6b57;
+        }
+        .welcome-msg {
+            font-size: 13px;
+            color: #a3cbd9;
+            margin-bottom: 5px;
+        }
+        .creator {
+            font-size: 13px;
+            color: #00ff66;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        .creator a {
+            color: #00ff66;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .btn {
+            width: 100%;
+            max-width: 320px;
+            padding: 13px;
+            border-radius: 12px;
+            border: none;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
+            transition: 0.2s;
+            box-sizing: border-box;
+        }
+        .btn:active {
+            transform: scale(0.97);
+        }
+        .btn-telegram {
+            background-color: #0a140f;
+            color: #ffffff;
+            border: 1px solid #00ff6644;
+        }
+        .btn-continue {
+            background-color: #00ff66;
+            color: #050b08;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0, 255, 102, 0.3);
+        }
+        .features-box {
+            font-size: 12px;
+            color: #8fa89b;
+            background: #08110c;
+            border: 1px dashed #00ff6633;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            max-width: 320px;
+            width: 100%;
+            text-align: right;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo-container">
+        <h1>HAMA<span>xFORGE</span></h1>
+        <div class="sub-text">EDIT · MODIFY · HACK · IPA</div>
+    </div>
+
+    <!-- خانەی کۆد کە فایلی مۆبایل/ئایپاد دەکاتەوە -->
+    <div class="hex-box" onclick="openFilePicker()">
+        <div><span class="hex-muted">0000</span> 48 8B 05 <span class="hex-muted">?? ?? ?? ??</span> <span style="float: right; font-size: 10px; color: #00ff66;">[📥 هاوردەکردن]</span></div>
+        <div><span class="hex-muted">0008</span> 89 45 F8 48 83 EC 20</div>
+        <div><span class="hex-muted">0010</span> 8B 45 F8 89 45 FC</div>
+        <div><span class="hex-muted">0018</span> 90 90 90 90 90 90 90</div>
+    </div>
+
+    <input type="file" id="fileInput" style="display: none;" onchange="fileSelected(this)">
+
+    <div class="welcome-msg">بە خێر بێن بۆ</div>
+    
+    <div class="logo-container" style="transform: scale(0.75); margin-top: -8px; margin-bottom: -5px;">
+        <h1>HAMA<span>xFORGE</span></h1>
+    </div>
+    
+    <div class="creator">
+        دروستکراوە لەلایەن: <a href="https://t.me/i7x97x" target="_blank">HAMA⚡️VIP</a>
+    </div>
+
+    <div class="features-box">
+        ⚙️ دەربارەی بەرنامە و تایبەتمەندییەکان: دەستکاری ڕەسمی Dylib، فایلی هاک، دابەزاندنی هاک وەک ESign، و جیلبڕیک بە شێوازی مینیوی پۆبجی.
+    </div>
+
+    <a href="https://t.me/hama_vip1" target="_blank" class="btn btn-telegram">
+        <span>جۆینی کەناڵی تلگرام ببە</span>
+    </a>
+
+    <button class="btn btn-continue" onclick="alert('سەرکەوتوو بوو! بەخێر هاتیت بۆ مینیوی سەرەکی HAMAxFORGE')">بەردەوام بوون</button>
+
+    <script>
+        function openFilePicker() {
+            document.getElementById('fileInput').click();
+        }
+        function fileSelected(input) {
+            if (input.files && input.files[0]) {
+                alert('فایلەکە بە سەرکەوتوویی هاوردە کرا بۆ گۆڕینی Dylib و هاک: ' + input.files[0].name);
+            }
+        }
+    </script>
+</body>
+</html>
